@@ -5,8 +5,8 @@
         </td>
         <td style="border-right: 2px solid black; width: 154px; height: 135px;">
             <div style="max-width: 154px;">
-                <p style="margin-top: 5px; margin-bottom: 5px;"><span style="font-family:Verdana; font-size: 16px; text-align: left;">Amit Das </span></p>
-                <p style="margin-top: 5px; margin-bottom: 5px"><span style="font-family:Verdana; font-size: 16px; text-align: left;">Developer</span></p>
+                <p style="margin-top: 5px; margin-bottom: 5px;"><span style="font-family:Verdana; font-size: 16px; text-align: left;">{{name}}</span></p>
+                <p style="margin-top: 5px; margin-bottom: 5px"><span style="font-family:Verdana; font-size: 16px; text-align: left;">{{position}}</span></p>
             </div>
 
         </td>
@@ -16,15 +16,15 @@
             
             <div style="margin-top: 10px;margin-bottom: 10px; display: flex; align-items: center; justify-content: start; height: 30px;">
                 <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/phone.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="tel:+91-7011352542">+91-7011352542</a>
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="tel:{{phone}}">{{phone}}</a>
             </div>
             <div style="margin-top: 10px; margin-bottom: 10px;display: flex; align-items: center; justify-content: start; height: 30px;">
                 <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/mail.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="mailto:mramitdas99@gmail.com">mramitdas99@gmail.com</a>
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="mailto:{{mail}}">{{mail}}</a>
             </div>
             <div style="margin-top: 10px;margin-bottom: 10px;display: flex; align-items: center; justify-content: start; height: 30px;">
                 <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/location.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000;" href="">New Delhi | India</a>
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000;" href="">{{location}}</a>
             </div>
         
         </td>
