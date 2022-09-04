@@ -1,7 +1,7 @@
 <table style="cellpadding:0; cellspacing:0; width:616px; height: 135px;">
     <tr>
         <td style="text-align: center; height: 135px;">
-            <img style="height: 127px;" src="{{ url_for('static', filename='dp.png') }}">
+            <img style="height: 127px;" src="{{image}}">
         </td>
         <td style="border-right: 2px solid black; width: 154px; height: 135px;">
             <div style="max-width: 154px;">
@@ -15,16 +15,16 @@
         <td style="width: 308px; height: 135px;">
             
             <div style="margin-top: 10px;margin-bottom: 10px; display: flex; align-items: center; justify-content: start; height: 30px;">
-                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/phone.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="tel:{{phone}}">{{phone}}</a>
+                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{phone[1]}}">
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="tel:{{phone[0]}}">{{phone[0]}}</a>
             </div>
             <div style="margin-top: 10px; margin-bottom: 10px;display: flex; align-items: center; justify-content: start; height: 30px;">
-                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/mail.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="mailto:{{mail}}">{{mail}}</a>
+                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{mail[1]}}">
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000; text-decoration-line: underline;" href="mailto:{{mail[0]}}">{{mail[0]}}</a>
             </div>
             <div style="margin-top: 10px;margin-bottom: 10px;display: flex; align-items: center; justify-content: start; height: 30px;">
-                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{ url_for('static', filename='icons/location.png')}}">
-                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000;" href="">{{location}}</a>
+                <img style="padding-left: 20px; height: 20px; width: 20px;" src="{{location[1]}}">
+                <a style="padding-left: 15px; font-size: 16px; font-family:Verdana; text-decoration: none; color: #000000;" href="">{{location[0]}}</a>
             </div>
         
         </td>
@@ -37,18 +37,11 @@
     <tr>
         <td style="text-align: center;">
             <p><span style="font-family:Verdana; margin-top: 10px; font-size: 16px; font-weight: 600;">Follow me!</span></p>
-
-            <a style="text-decoration:none;" href="https://github.com/mramitdas" target="_blank"> 
-                <img style="margin-left: 15px; margin-right: 15px; height: 30px; width: 30px;" src="{{ url_for('static', filename='social/github.png')}}">
+            {% for x in social_icons %}
+            <a style="text-decoration:none;" href="{{x[0]}}" target="_blank">
+                <img style="outline:none; margin-left: 15px; margin-right: 15px; height: 30px; width: 30px;" src="{{x[1]}}">
             </a>
-            
-            <a style="text-decoration:none;" href="https://linkedin.com/in/mramitdas" target="_blank">
-                <img  style="margin-left: 15px; margin-right: 15px; height: 30px; width: 30px;" src="{{ url_for('static', filename='social/linkedin.png')}}">
-            </a>
-            
-            <a style="text-decoration:none;" href="https://www.hackerrank.com/mramitdas" target="_blank">
-                <img  style="margin-left: 15px; margin-right: 15px; height: 30px; width: 30px;" src="{{ url_for('static', filename='social/hackerank.png')}}">
-            </a>
+            {% endfor %}
         </td>
     </tr>
 </table>
