@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -15,12 +15,7 @@ icons = {
 }
 
 
-@app.route('/', methods=["GET", "POST"])
-def home():
-    return render_template('sign.html')
-
-
-@app.route("/api", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def main():
     if request.method == "POST":
         data = request.get_json()
@@ -44,9 +39,23 @@ def main():
 
                                    image=data['image_url'], social_icons=social_icons)
 
-        return "Error: 400,\n" \
-               "Essential: {'name', 'position', 'phone', 'mail', 'location', 'image_url'},\n" \
-               "Optional: {'github', 'linkedin', 'youtube', 'hackerank', 'insta'}"
+        return {"Error": 400,
+                "Essential": "name, position, mail, location, image_url",
+                "Optional": "github, linkedin, youtube, hackerank, insta",
+                "Sample": {
+                    "name": "Amit Das",
+                    "position": "Developer",
+                    "phone": "+91-7011352542",
+                    "mail": "mramitdas99@gmail.com",
+                    "location": "New delhi | India",
+                    "image_url": "https://github.com/mramitdas/imStore/raw/main/dp.png",
+                    "social_accounts": {
+                        "github": "github.com/mramitdas",
+                        "linkedin": "https://www.linkedin.com/in/mramitdas/",
+                        "hackerrank": "https://www.hackerrank.com/mramitdas"
+                    }
+                }
+                }
 
 
 if __name__ == '__main__':
