@@ -134,7 +134,7 @@ python3 app.py
 
 ## Demo
 
-Click [here](https://vinitshahdeo.github.io/email_signature/templates/sign.html) to view the live demo.
+Click [here](https://mramitdas.github.io/email_signature/templates/sign.html) to view the live demo.
 
 ## Project Structure
 ```
